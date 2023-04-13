@@ -1,5 +1,4 @@
 import os
-import sys
 import argparse
 import requests
 from requests.exceptions import HTTPError
@@ -7,10 +6,11 @@ from urllib.parse import urlparse
 from dotenv import load_dotenv
 
 
-def createArgParser ():
+def create_arg_parser():
     arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument ('link', nargs='?')
+    arg_parser.add_argument('link', nargs='?')
     return arg_parser
+
 
 def shorten_link(token, link):
     body = {"long_url": link}
@@ -43,7 +43,7 @@ def is_bitlink(link, token):
 def main():
     load_dotenv()
     token = os.getenv("BITLY_TOKEN")
-    arg_parser = createArgParser()
+    arg_parser = create_arg_parser()
     input_link = arg_parser.parse_args().link
     try:
         if is_bitlink(input_link, token):
@@ -56,11 +56,6 @@ def main():
         print(f'HTTP ошибка: {http_err}')
 
 
-def main2():
-    arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument ('link', nargs='?')
-    print (arg_parser.parse_args().link)
 
 if __name__ == '__main__':
     main()
-    # main2()
