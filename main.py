@@ -56,6 +56,5 @@ def main():
         print(f'HTTP ошибка: {http_err}')
 
 
-
 if __name__ == '__main__':
     main()
