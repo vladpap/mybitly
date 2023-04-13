@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 В переменную окружения `BITLY_TOKEN` записать токен Битли
 
-Рекомендуется использовать среду окружения [venv] (https://docs.python.org/3/library/venv.html) для изоляции проекта.
+Рекомендуется использовать среду окружения [venv](https://docs.python.org/3/library/venv.html) для изоляции проекта.
 
 ### Использование
 ```console
